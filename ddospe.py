@@ -29,6 +29,7 @@ print(" ")
 time.sleep(1)
 ip = input("IP: ")
 port = int(input("PORT: "))
+c = int(input("THREADS: "))
 time.sleep(3)
 print(" ")
 os.system("clear")
@@ -37,7 +38,7 @@ print(" ")
 print(f"Attacking To {ip} {port}")
 # Start Attack
 
-for i in range(10):
+for i in range(c):
   t = threading.Thread(target=attack,args=(ip, port), daemon=True)
   t.start()
 while True:
